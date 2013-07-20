@@ -1,0 +1,1 @@
+Provider=MSDASQL.1;Persist Security Info=True;Extended Properties="Driver=MySQL ODBC 5.1 Driver;SERVER=72.18.141.138;UID=pccesara_augusto;PWD=pcna1966;DATABASE=pccesara_url_db;PORT=3306;CHARSET=utf8;COMPRESSED_PROTO=1;AUTO_RECONNECT=1"

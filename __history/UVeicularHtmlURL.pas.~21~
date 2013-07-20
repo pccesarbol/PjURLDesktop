@@ -1,0 +1,76 @@
+unit UVeicularHtmlURL;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, OleCtrls, SHDocVw, ExtCtrls, DB, ADODB;
+
+type
+  TForm1 = class(TForm)
+    Timer1: TTimer;
+    WebBrowser1: TWebBrowser;
+    DB_URL_Ricardo: TADOConnection;
+    TabURL: TADOTable;
+    TabURLnu_seq_url: TAutoIncField;
+    TabURLmaquina: TStringField;
+    TabURLurl: TMemoField;
+    TabURLurl_ativa: TStringField;
+    TabURLtemLogin: TStringField;
+    TabURLnu_seq_usuario: TIntegerField;
+    TabURLdt_cadastro: TStringField;
+    TabURLlogin: TStringField;
+    TabURLsenha: TStringField;
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+   //-- fechar a tela ao precionar tecla F3 --//
+   if(Key = VK_F3)then
+   begin
+       close();
+   end;
+
+   //-- fechar a tela ao precionar tecla F4 --//
+   if(Key = VK_F4)then
+   begin
+       close();
+   end;
+end;
+
+procedure TForm1.FormShow(Sender: TObject);
+begin
+  TabURL.Active := false;
+  TabURL.Active := true;
+  TabURL.First;
+  while not TabURL.Eof do
+  begin
+     if((TabURLmaquina.Value = 'Est_01') AND (TabURLurl_ativa.Value = 'S'))then
+     begin
+         WebBrowser1.Navigate(Trim(TabURLurl.Value));
+     end
+     else
+     begin
+         ShowMessage('Atenção! Não existe url ativa para esta estação de trabalho.');
+         close();
+     end;
+     TabURL.Next;
+  end;
+
+end;
+
+end.

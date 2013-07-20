@@ -1,0 +1,98 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsNone
+  ClientHeight = 240
+  ClientWidth = 463
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  KeyPreview = True
+  OldCreateOrder = False
+  WindowState = wsMaximized
+  OnKeyDown = FormKeyDown
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object WebBrowser1: TWebBrowser
+    Left = 0
+    Top = 0
+    Width = 463
+    Height = 240
+    Align = alClient
+    TabOrder = 0
+    ExplicitLeft = 48
+    ExplicitTop = 48
+    ExplicitWidth = 300
+    ExplicitHeight = 150
+    ControlData = {
+      4C000000DA2F0000CE1800000000000000000000000000000000000000000000
+      000000004C000000000000000000000001000000E0D057007335CF11AE690800
+      2B2E126208000000000000004C0000000114020000000000C000000000000046
+      8000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000100000000000000000000000000000000000000}
+  end
+  object Timer1: TTimer
+    Interval = 60000
+    OnTimer = Timer1Timer
+    Left = 320
+    Top = 32
+  end
+  object DB_URL_Ricardo: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=MSDASQL.1;Persist Security Info=True;Extended Propertie' +
+      's="Driver=MySQL ODBC 5.1 Driver;SERVER=72.18.141.138;UID=pccesar' +
+      'a_augusto;PWD=pcna1966;DATABASE=pccesara_url_db;PORT=3306;CHARSE' +
+      'T=utf8;COMPRESSED_PROTO=1;AUTO_RECONNECT=1"'
+    LoginPrompt = False
+    Left = 168
+    Top = 32
+  end
+  object TabURL: TADOTable
+    Active = True
+    Connection = DB_URL_Ricardo
+    CursorType = ctStatic
+    TableName = 'taburl'
+    Left = 168
+    Top = 96
+    object TabURLnu_seq_url: TAutoIncField
+      FieldName = 'nu_seq_url'
+      ReadOnly = True
+    end
+    object TabURLmaquina: TStringField
+      FieldName = 'maquina'
+      Size = 50
+    end
+    object TabURLurl: TMemoField
+      FieldName = 'url'
+      BlobType = ftMemo
+    end
+    object TabURLurl_ativa: TStringField
+      FieldName = 'url_ativa'
+      Size = 1
+    end
+    object TabURLtemLogin: TStringField
+      FieldName = 'temLogin'
+      Size = 1
+    end
+    object TabURLnu_seq_usuario: TIntegerField
+      FieldName = 'nu_seq_usuario'
+    end
+    object TabURLdt_cadastro: TStringField
+      FieldName = 'dt_cadastro'
+    end
+    object TabURLlogin: TStringField
+      FieldName = 'login'
+      Size = 45
+    end
+    object TabURLsenha: TStringField
+      FieldName = 'senha'
+      Size = 45
+    end
+  end
+end

@@ -1,0 +1,63 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsNone
+  ClientHeight = 240
+  ClientWidth = 463
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  KeyPreview = True
+  OldCreateOrder = False
+  WindowState = wsMaximized
+  OnKeyDown = FormKeyDown
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 222
+    Width = 463
+    Height = 18
+    Align = alBottom
+    BorderStyle = bsSingle
+    Caption = 'PjUrlDesktop - Exibi'#231#227'o de P'#225'ginas'
+    TabOrder = 0
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 0
+    Width = 463
+    Height = 17
+    Align = alTop
+    BorderStyle = bsSingle
+    Caption = 'PjUrlDesktop - Exibi'#231#227'o de P'#225'ginas'
+    TabOrder = 1
+  end
+  object WebBrowser1: TWebBrowser
+    Left = 0
+    Top = 17
+    Width = 463
+    Height = 205
+    Align = alClient
+    TabOrder = 2
+    ExplicitLeft = 48
+    ExplicitTop = 48
+    ExplicitWidth = 300
+    ExplicitHeight = 150
+    ControlData = {
+      4C000000DA2F0000301500000000000000000000000000000000000000000000
+      000000004C000000000000000000000001000000E0D057007335CF11AE690800
+      2B2E126208000000000000004C0000000114020000000000C000000000000046
+      8000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000100000000000000000000000000000000000000}
+  end
+  object Timer1: TTimer
+    Left = 320
+    Top = 32
+  end
+end
